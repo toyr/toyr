@@ -28,4 +28,9 @@ public class StringUtil {
     public static String[] splitString(String body, String s) {
         return StringUtils.split(body, s);
     }
+
+    /**
+     * 字符串分隔符
+     */
+    public static final String SEPARATOR = String.valueOf((char)29);
 }
