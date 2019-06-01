@@ -1,0 +1,25 @@
+package org.smart4j.framework;
+
+import org.smart4j.framework.helper.*;
+import org.smart4j.framework.util.ClassUtil;
+
+/**
+ * @author unisk1123
+ * @Description 加载相应的 Helper 类
+ * @create 2019/5/28
+ */
+public final class HelperLoader {
+
+    public static void init() {
+        Class<?>[] classList = {
+                ClassHelper.class,
+                BeanHelper.class,
+                AopHelper.class,
+                IocHelper.class,
+                ControllerHelper.class
+        };
+        for (Class<?> cls : classList) {
+            ClassUtil.loadClass(cls.getName());
+        }
+    }
+}
