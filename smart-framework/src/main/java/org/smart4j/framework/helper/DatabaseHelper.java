@@ -38,7 +38,7 @@ public class DatabaseHelper {
     private static final BasicDataSource DATA_SOURCE;
 
     static {
-        CONNECTION_HOLDER = new ThreadLocal<>();
+        CONNECTION_HOLDER = new ThreadLocal<Connection>();
 
         QUERY_RUNNER = new QueryRunner();
 
@@ -219,7 +219,7 @@ public class DatabaseHelper {
 
         sql += columns.substring(0, columns.lastIndexOf(", ")) + " WHERE id = ?";
 
-        List<Object> paramList = new ArrayList<>();
+        List<Object> paramList = new ArrayList<Object>();
         paramList.addAll(fieldMap.values());
         paramList.add(id);
         Object[] params = paramList.toArray();

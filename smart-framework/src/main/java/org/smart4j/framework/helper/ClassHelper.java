@@ -84,7 +84,7 @@ public class ClassHelper {
      * @return
      */
     public static Set<Class<?>> getClassSetBySuper(Class<?> superClass) {
-        Set<Class<?>> classSet = new HashSet<>();
+        Set<Class<?>> classSet = new HashSet<Class<?>>();
         for (Class<?> cls : CLASS_SET) {
             if (superClass.isAssignableFrom(cls) && !superClass.equals(cls)) {
                 classSet.add(cls);
@@ -99,7 +99,7 @@ public class ClassHelper {
      * @return
      */
     public static Set<Class<?>> getClassSetByAnnotation(Class<? extends Annotation> annotationClass) {
-        Set<Class<?>> classSet = new HashSet<>();
+        Set<Class<?>> classSet = new HashSet<Class<?>>();
         for (Class<?> cls :
                 CLASS_SET) {
             if (cls.isAnnotationPresent(annotationClass))
